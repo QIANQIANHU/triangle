@@ -8,19 +8,19 @@ $(document).ready(function() {
     $(".results div").hide();
 
     if (side1 && side2 && side3) {
-      if (side1===side2 && side1===side3 && side3===side1) {
+      if (side1===side2 && side1===side3 && side3===side2) {
         $("#equilateral").show();
+      } else if ((side1 > (side2 + side3))|| (side2 > (side1 + side3)) || (side3 > (side1 + side2))) {
+          $("#notTriangle").show();
       } else if ((side1===side2)||(side2===side3)||(side3===side1)) {
           $("#isosceles").show();
-      } else if ((side1 !== side2) && (side1 !== side3) && (side2 !== side3)) {
-          $("#scalene").show();
       } else {
-          $("#notTriangle").show();
+          $("#scalene").show();
       }
-
     } else {
       alert('Please enter numbers.');
     }
+
     event.preventDefault();
   });
 });
