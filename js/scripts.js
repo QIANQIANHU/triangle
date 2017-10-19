@@ -7,11 +7,11 @@ $(document).ready(function() {
 
 
     if (side1 && side2 && side3) {
-      if (side1 === side2 && side1 === side3) {
+      if (side1===side2 && side1===side3 && side3===side1) {
         $("#equilateral").show();
-      } else if (side1 === side2 && side1 !== side3) {
+      } else if ((side1===side2)||(side2===side3)||(side3===side1)) {
           $("#isosceles").show();
-      } else if () {
+      } else if ((side1 !== side2) && (side1 !== side3) && (side2 !== side3)) {
           $("#scalene").show();
       } else {
           $("#notTriangle").show();
